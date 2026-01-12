@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 21st Birthday, Karunasagari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff85a2;
+            --soft-pink: #fce7f3;
+            --deep-pink: #db2777;
+            --lavender: #f3e8ff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #fff5f7;
+            scroll-behavior: smooth;
+        }
+
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-cursive { font-family: 'Dancing Script', cursive; }
+
+        .bg-animated-gradient {
+            background: linear-gradient(-45deg, #ffe4e6, #fce7f3, #fae8ff, #f3e8ff, #fff1f2);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.2);
+        }
+
+        .heart-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatUp linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,182,193,0.4) 0%, rgba(255,255,255,0) 70%);
+            filter: blur(40px);
+            z-index: -1;
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.3); opacity: 0.6; }
+        }
+
+        .btn-love {
+            background: linear-gradient(to right, var(--primary-pink), var(--deep-pink));
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-love:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(219, 39, 119, 0.4);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #db2777, #9333ea, #db2777);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textFlow 5s linear infinite;
+        }
+
+        @keyframes textFlow {
+            to { background-position: 200% center; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="bg-animated-gradient">
+
+    <!-- Floating Background Particles (managed by JS) -->
+    <div id="heart-container"></div>
+
+    <!-- Navigation Overlay -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-white/10 backdrop-blur-md border-b border-white/20">
+        <span class="font-cursive text-2xl text-pink-600">K & Forever</span>
+        <div class="space-x-4 hidden md:block">
+            <a href="#message" class="text-sm font-medium text-pink-700 hover:text-pink-900 transition">Our Story</a>
+            <a href="#reasons" class="text-sm font-medium text-pink-700 hover:text-pink-900 transition">21 Reasons</a>
+            <a href="#surprise" class="text-sm font-medium text-pink-700 hover:text-pink-900 transition">Surprise</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex flex-col items-center justify-center text-center px-4">
+        <div class="hero-glow"></div>
+        <div class="reveal">
+            <svg class="w-16 h-16 text-pink-500 mx-auto mb-6 animate-bounce" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 drop-shadow-sm">
+                Happy 21st Birthday,<br>
+                <span class="text-gradient">Karunasagari</span> 💖
+            </h1>
+            <p class="text-2xl md:text-3xl font-cursive text-pink-500 mt-4">
+                "Every moment with you is my favorite."
+            </p>
+            <div class="mt-10 flex gap-4 justify-center">
+                <a href="#message" class="px-8 py-3 bg-white/40 border border-pink-200 text-pink-600 rounded-full font-semibold hover:bg-white/60 transition">Open Letter</a>
+                <button onclick="createHeartExplosion()" class="px-8 py-3 btn-love text-white rounded-full font-semibold shadow-lg">Magic Surprise</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Message Section -->
+    <section id="message" class="py-32 px-4 flex justify-center">
+        <div class="glass max-w-4xl p-10 md:p-20 rounded-[3rem] text-center reveal border-2 border-white/50 relative">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-white px-6 py-2 rounded-full border border-pink-100 shadow-sm text-pink-500 font-bold uppercase tracking-widest text-xs">A special note</div>
+            <p class="text-2xl md:text-3xl leading-relaxed font-serif text-gray-700 italic">
+                “Today is your birthday, <b>Karunasagari</b>, but the most special day in my life was the day you came into it. Every time you smile, all the stress in my mind disappears. Cakes, gifts, and candles may come and go, but the moments I share with you are the real celebration. You are the best part of my world.”
+            </p>
+            <div class="mt-12 font-cursive text-3xl text-pink-500">— Your Favorite Person</div>
+        </div>
+    </section>
+
+    <!-- 21 Reasons Section -->
+    <section id="reasons" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-4xl md:text-6xl font-bold text-pink-600 mb-4">21 Things I Love About You</h2>
+            <p class="text-pink-400 font-medium">For every candle on your cake</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="reasons-grid">
+            <!-- Dynamically populated by JS -->
+        </div>
+    </section>
+
+    <!-- Final Surprise Section -->
+    <section id="surprise" class="py-40 px-4 text-center">
+        <div class="reveal glass p-16 md:p-24 rounded-[4rem] max-w-3xl mx-auto border-2 border-white/40 shadow-2xl relative">
+            <h2 class="text-5xl md:text-7xl font-bold text-pink-600 mb-6 font-serif">Karunasagari</h2>
+            <p class="text-2xl text-gray-600 mb-12 italic font-serif">
+                "You are my today, tomorrow, and always."
+            </p>
+            
+            <div class="relative inline-block">
+                <button onclick="finalSurprise(event)" class="group px-12 py-6 btn-love text-white rounded-full font-bold text-2xl shadow-xl flex items-center gap-4 mx-auto">
+                    I LOVE YOU <svg class="w-8 h-8 group-hover:scale-125 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </button>
+            </div>
+        </div>
+        
+        <footer class="mt-24 text-pink-300 font-medium tracking-widest text-sm uppercase">
+            &mdash; Eternally Yours &mdash;
+        </footer>
+    </section>
+
+    <script>
+        const reasons = [
+            "Even with 21 candles, the only flame burning in my heart is you.",
+            "Your birthday cake may be sweet, but your smile is even sweeter.",
+            "You’re turning 21, but your beauty keeps getting better every day.",
+            "The moment you smile, even my worst day becomes a good one.",
+            "The world celebrates your birthday once a year, but I celebrate you every day.",
+            "21 years of beauty — and this is your most beautiful version yet.",
+            "The moment I look into your eyes, my heart says yes.",
+            "Cake has icing, but my life has you on top.",
+            "Even silence feels sweet when you are with me.",
+            "If I could be your birthday gift, I would be one that lasts forever.",
+            "You are the only wish my heart makes when the candles are blown.",
+            "Hearing your voice puts all my worries on mute.",
+            "There’s magic in your smile — it changes my entire mood.",
+            "You grow older, but your charm never fades.",
+            "Just like cutting a cake, you fit perfectly into my heart.",
+            "A world with you in it can never be boring.",
+            "Even at 21, you are still my very first crush.",
+            "You are the color that brought life into my world.",
+            "Like birthday candles, you make my life glow brighter.",
+            "Just hearing your name brings a smile to my lips.",
+            "On your birthday, one thing is certain — you are my favorite person."
+        ];
+
+        // Populate Reasons Grid
+        const grid = document.getElementById('reasons-grid');
+        reasons.forEach((text, i) => {
+            const card = document.createElement('div');
+            card.className = 'glass p-8 rounded-3xl reveal card-hover transition-all duration-300 flex flex-col gap-4';
+            card.innerHTML = `
+                <div class="w-10 h-10 bg-pink-500 text-white rounded-xl flex items-center justify-center font-bold shadow-md">
+                    ${i + 1}
+                </div>
+                <p class="text-gray-700 font-serif italic text-lg leading-relaxed">"${text}"</p>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Floating Hearts Logic
+        const heartContainer = document.getElementById('heart-container');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart-particle';
+            heart.innerHTML = ['❤️', '💖', '💕', '✨', '🌸'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.bottom = '-50px';
+            heart.style.animationDuration = (Math.random() * 5 + 10) + 's';
+            heart.style.opacity = Math.random();
+            
+            heartContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 15000);
+        }
+
+        setInterval(createHeart, 800);
+
+        // Surprise Button Logic
+        function createHeartExplosion() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-particle';
+                    heart.innerHTML = ['❤️', '💖', '✨'][Math.floor(Math.random() * 3)];
+                    heart.style.left = (50 + (Math.random() - 0.5) * 60) + 'vw';
+                    heart.style.bottom = '20vh';
+                    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    heart.style.animationDuration = (Math.random() * 2 + 1) + 's';
+                    heartContainer.appendChild(heart);
+                    setTimeout(() => heart.remove(), 2000);
+                }, i * 50);
+            }
+        }
+
+        function finalSurprise(e) {
+            const x = e.clientX;
+            const y = e.clientY;
+            
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerHTML = '❤️';
+                heart.style.left = x + 'px';
+                heart.style.top = y + 'px';
+                heart.style.fontSize = '24px';
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 300 + 100;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance - 500;
+
+                heart.animate([
+                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                    { transform: `translate(${tx}px, ${ty}px) scale(2) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+                ], {
+                    duration: 2000,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                });
+
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 2000);
+            }
+        }
+    </script>
+</body>
+</html>
